@@ -19,6 +19,9 @@ public class UserEntity {
     @Column(name = "Weight", nullable = false)
     private int weight;
 
+    @Column(name = "Height", nullable = false)
+    private int height;
+
     @Column(name = "Age")
     private int age;
 
@@ -29,11 +32,11 @@ public class UserEntity {
     private int goalW;
 
 
-    public UserEntity(long id, String firstName, String lastName, int weight, int age, double bmi, int goalW) {
-        this.id = id;
+    public UserEntity(String firstName, String lastName, int weight,int height, int age, double bmi, int goalW) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.weight = weight;
+        this.height = height;
         this.age = age;
         this.bmi = bmi;
         this.goalW = goalW;
@@ -94,5 +97,13 @@ public class UserEntity {
 
     public void setGoalW(int goalW) {
         this.goalW = goalW;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

@@ -1,8 +1,8 @@
 package htw.berlin.webtech.demo.user;
 
-public class User {
+public class UserCreateOrUpdateRequest {
 
-    private long id;
+
     private String firstName;
     private String lastName;
     private int weight;
@@ -11,8 +11,7 @@ public class User {
     private double bmi;
     private int goalW;
 
-    public User(long id, String firstName, String lastName, int weight,int height, int age, double bmi, int goalW) {
-        this.id = id;
+    public UserCreateOrUpdateRequest(String firstName, String lastName, int weight, int height, int age, double bmi, int goalW) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.weight = weight;
@@ -20,14 +19,6 @@ public class User {
         this.age = age;
         this.bmi = bmi;
         this.goalW = goalW;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -54,6 +45,14 @@ public class User {
         this.weight = weight;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
     public int getAge() {
         return age;
     }
@@ -76,13 +75,5 @@ public class User {
 
     public void setGoalW(int goalW) {
         this.goalW = goalW;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 }
