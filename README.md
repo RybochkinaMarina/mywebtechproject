@@ -1,6 +1,6 @@
 # mywebtechproject
 Wir wollen eine Webanwendung entwickeln in der man BMI bzw. 
-Wasser-, Kalorienbedarf und Bedarf an Fette, Eiweisse und Kohlenhydrate (Abnehmen/Gewicht halten/Zunehmen)
+Kalorienbedarf  (Abnehmen/Gewicht halten/Zunehmen)
 berechnen kann. Ausserdem kann man in der Anwendung jeden Tag alle gegessene Produkte hinzufügen und gucken,
 ob man zu viel / zu wenig gegessen hat. Man hat auch die Möglichkeit, eine Liste von Lieblingsprodukten
 oder -gerichten zu erstellen.
