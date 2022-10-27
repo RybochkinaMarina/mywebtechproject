@@ -25,7 +25,7 @@ public class UserService {
     public User create(UserCreateOrUpdateRequest request){
 
         var UserEntity = new UserEntity(request.getUsername(), request.getPasswort(), request.getWeight(),
-                request.getHeight(), request.getAge(), request.getBmi(), request.getCategory(), request.getGoalW());
+                request.getHeight(), request.getAge(), request.getBmi(), request.getCategory(), request.getGoalW(), request.getBmr());
         UserEntity = userRepository.save(UserEntity);
 
         return transformEntity(UserEntity);
@@ -54,6 +54,7 @@ public class UserService {
         userEntity.setBmi(request.getBmi());
         userEntity.setCategory(request.getCategory());
         userEntity.setGoalW(request.getGoalW());
+        userEntity.setBmr(request.getBmr());
         userEntity = userRepository.save(userEntity);
 
         return transformEntity(userEntity);

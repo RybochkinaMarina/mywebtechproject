@@ -1,5 +1,7 @@
 package htw.berlin.webtech.demo.user;
 
+import javax.persistence.Column;
+
 public class UserCreateOrUpdateRequest {
 
 
@@ -12,8 +14,11 @@ public class UserCreateOrUpdateRequest {
     private double bmi;
     private String category;
     private int goalW;
+    private int bmr;
 
-    public UserCreateOrUpdateRequest(String firstName, String lastName, int weight, int height, int age, double bmi, int goalW) {
+
+    public UserCreateOrUpdateRequest(String username, String passwort, int weight, int height, int age, double bmi, String category, int goalW
+    , int bmr) {
         this.username = username;
         this.passwort = passwort;
         this.weight = weight;
@@ -22,6 +27,7 @@ public class UserCreateOrUpdateRequest {
         this.bmi = bmi;
         this.category = category;
         this.goalW = goalW;
+        this.bmr = bmr;
     }
 
 
@@ -84,6 +90,14 @@ public class UserCreateOrUpdateRequest {
 
     public String getCategory() {
         return category;
+    }
+
+    public int getBmr() {
+        return bmr;
+    }
+
+    public void setBmr(int bmr) {
+        this.bmr = bmr;
     }
 
     public void setCategory(String category) {

@@ -11,6 +11,7 @@ public class User {
     private double bmi;
     private String category;
     private int goalW;
+    private int bmr;
 
     public User(long id, String username, String passwort, int weight, int height, int age, int goalW) {
         this.id = id;
@@ -22,6 +23,13 @@ public class User {
         this.bmi = calcBmi();
         this.category = calcRes();
         this.goalW = goalW;
+        this.bmr = calcBmr();
+    }
+
+    private int calcBmr() {
+        bmr += (66.47 + (13.75 * weight) + (5.003 * height) - (6.755 * age));
+
+        return bmr;
     }
 
     private String calcRes() {
@@ -93,6 +101,13 @@ public class User {
         this.id = id;
     }
 
+    public int getBmr() {
+        return bmr;
+    }
+
+    public void setBmr(int bmr) {
+        this.bmr = bmr;
+    }
 
     public int getWeight() {
         return weight;

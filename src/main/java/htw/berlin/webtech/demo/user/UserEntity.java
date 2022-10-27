@@ -34,9 +34,11 @@ public class UserEntity {
 
     @Column(name = "Goal_Weight", nullable = false)
     private int goalW;
+    @Column(name = "BMR", nullable = false)
+    private int bmr;
 
 
-    public UserEntity(String firstName, String passwort, int weight,int height, int age, double bmi,String category, int goalW) {
+    public UserEntity(String username, String passwort, int weight,int height, int age, double bmi,String category, int goalW, int bmr) {
         this.username = username;
         this.passwort = passwort;
         this.weight = weight;
@@ -45,6 +47,7 @@ public class UserEntity {
         this.bmi = bmi;
         this.category = category;
         this.goalW = goalW;
+        this.bmr = bmr;
     }
 
     protected UserEntity(){
@@ -55,6 +58,13 @@ public class UserEntity {
         return id;
     }
 
+    public int getBmr() {
+        return bmr;
+    }
+
+    public void setBmr(int bmr) {
+        this.bmr = bmr;
+    }
 
     public int getWeight() {
         return weight;
