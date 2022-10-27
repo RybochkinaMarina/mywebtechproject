@@ -3,23 +3,86 @@ package htw.berlin.webtech.demo.user;
 public class User {
 
     private long id;
-    private String firstName;
-    private String lastName;
+    private String username;
+    private String passwort;
     private int weight;
     private int height;
     private int age;
     private double bmi;
+    private String category;
     private int goalW;
 
-    public User(long id, String firstName, String lastName, int weight,int height, int age, double bmi, int goalW) {
+    public User(long id, String username, String passwort, int weight, int height, int age, int goalW) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.username = username;
+        this.passwort = passwort;
         this.weight = weight;
         this.height = height;
         this.age = age;
-        this.bmi = bmi;
+        this.bmi = calcBmi();
+        this.category = calcRes();
         this.goalW = goalW;
+    }
+
+    private String calcRes() {
+
+        if (this.bmi < 16) {
+
+            category = "Severe Thinness";
+
+        }
+
+        if (this.bmi > 16 && this.bmi < 17) {
+
+            category = "Moderate Thinnes";
+
+        }
+        if (this.bmi > 17 && this.bmi < 18.5) {
+
+            category = "Mild Thinness";
+
+        }
+
+        if (this.bmi > 18.5 && this.bmi < 25) {
+
+            category = "Normal";
+
+        }
+
+        if (this.bmi > 25 && this.bmi < 30) {
+
+            category = "Overweight";
+
+        }
+
+        if (this.bmi > 30 && this.bmi < 35) {
+
+            category = "Obese Class I";
+
+        }
+
+        if (this.bmi > 35 && this.bmi < 40) {
+
+            category = "Obese Class II";
+
+        }
+
+        if (this.bmi > 45) {
+
+            category = "Obese Class III";
+
+        }
+
+        return category;
+
+
+    }
+
+    public double calcBmi() {
+
+        bmi = weight / (height * height);
+
+        return bmi;
     }
 
     public long getId() {
@@ -30,21 +93,6 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public int getWeight() {
         return weight;
@@ -84,5 +132,29 @@ public class User {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

@@ -3,39 +3,28 @@ package htw.berlin.webtech.demo.user;
 public class UserCreateOrUpdateRequest {
 
 
-    private String firstName;
-    private String lastName;
+
+    private String username;
+    private String passwort;
     private int weight;
     private int height;
     private int age;
     private double bmi;
+    private String category;
     private int goalW;
 
     public UserCreateOrUpdateRequest(String firstName, String lastName, int weight, int height, int age, double bmi, int goalW) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.username = username;
+        this.passwort = passwort;
         this.weight = weight;
         this.height = height;
         this.age = age;
         this.bmi = bmi;
+        this.category = category;
         this.goalW = goalW;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public int getWeight() {
         return weight;
@@ -75,5 +64,29 @@ public class UserCreateOrUpdateRequest {
 
     public void setGoalW(int goalW) {
         this.goalW = goalW;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

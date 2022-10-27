@@ -24,8 +24,8 @@ public class UserService {
 
     public User create(UserCreateOrUpdateRequest request){
 
-        var UserEntity = new UserEntity(request.getFirstName(), request.getLastName(), request.getWeight(),
-                request.getHeight(), request.getAge(), request.getBmi(), request.getGoalW());
+        var UserEntity = new UserEntity(request.getUsername(), request.getPasswort(), request.getWeight(),
+                request.getHeight(), request.getAge(), request.getBmi(), request.getCategory(), request.getGoalW());
         UserEntity = userRepository.save(UserEntity);
 
         return transformEntity(UserEntity);
@@ -46,12 +46,13 @@ public class UserService {
         }
 
         var userEntity = userEntityOptional.get();
-        userEntity.setFirstName(request.getFirstName());
-        userEntity.setLastName(request.getLastName());
+        userEntity.setUsername(request.getUsername());
+        userEntity.setPasswort(request.getPasswort());
         userEntity.setWeight(request.getWeight());
         userEntity.setHeight(request.getHeight());
         userEntity.setAge(request.getAge());
         userEntity.setBmi(request.getBmi());
+        userEntity.setCategory(request.getCategory());
         userEntity.setGoalW(request.getGoalW());
         userEntity = userRepository.save(userEntity);
 
@@ -62,8 +63,8 @@ public class UserService {
 
     private User transformEntity(UserEntity userEntity){
         return new User(userEntity.getId(),
-                userEntity.getFirstName(), userEntity.getLastName(), userEntity.getWeight(), userEntity.getHeight(),
-                userEntity.getAge(), userEntity.getBmi(), userEntity.getGoalW());
+                userEntity.getUsername(), userEntity.getPasswort(), userEntity.getWeight(), userEntity.getHeight(),
+                userEntity.getAge(), userEntity.getGoalW());
     }
 
     public boolean deleteById(Long id) {

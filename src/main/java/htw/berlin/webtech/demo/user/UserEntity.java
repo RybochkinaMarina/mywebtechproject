@@ -2,6 +2,7 @@ package htw.berlin.webtech.demo.user;
 
 import javax.persistence.*;
 
+
 @Entity
 public class UserEntity {
 
@@ -10,11 +11,11 @@ public class UserEntity {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "First_Name", nullable = false)
-    private String firstName;
+    @Column(name = "User_Name", nullable = false)
+    private String username;
 
-    @Column(name = "Last_Name", nullable = false)
-    private String lastName;
+    @Column(name = "Passwort", nullable = false)
+    private String passwort;
 
     @Column(name = "Weight", nullable = false)
     private int weight;
@@ -28,17 +29,21 @@ public class UserEntity {
     @Column(name = "BMI", nullable = false)
     private double bmi;
 
+    @Column(name = "Category")
+    private String category;
+
     @Column(name = "Goal_Weight", nullable = false)
     private int goalW;
 
 
-    public UserEntity(String firstName, String lastName, int weight,int height, int age, double bmi, int goalW) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public UserEntity(String firstName, String passwort, int weight,int height, int age, double bmi,String category, int goalW) {
+        this.username = username;
+        this.passwort = passwort;
         this.weight = weight;
         this.height = height;
         this.age = age;
         this.bmi = bmi;
+        this.category = category;
         this.goalW = goalW;
     }
 
@@ -50,22 +55,6 @@ public class UserEntity {
         return id;
     }
 
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public int getWeight() {
         return weight;
@@ -105,5 +94,29 @@ public class UserEntity {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
