@@ -1,4 +1,4 @@
-# mywebtechproject
+# kalorien-tracking
 Wir wollen eine Webanwendung entwickeln in der man BMI bzw. 
 Kalorienbedarf  (Abnehmen/Gewicht halten/Zunehmen)
 berechnen kann. Ausserdem kann man in der Anwendung jeden Tag alle gegessene Produkte hinzufügen und gucken,
