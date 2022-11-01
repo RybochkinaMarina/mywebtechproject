@@ -3,10 +3,7 @@ package htw.berlin.webtech.demo.product;
 
 import htw.berlin.webtech.demo.day.DayEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +11,28 @@ import java.util.List;
 @Table(name= "Product")
 public class ProductEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "Produkt_Name", nullable = false)
     private String name;
 
+    @Column(name = "Kcal", nullable = false)
     private int kcal;
+
+    public ProductEntity(String name, int kcal){
+        this.name = name;
+        this.kcal = kcal;
+    }
+
+    protected ProductEntity(){
+
+    }
 
     @ManyToMany(mappedBy = "productEntitySet")
     private List<DayEntity> dayEntitySet = new ArrayList<>();
-
-    private Long id;
 
     public String getName() {
         return name;
